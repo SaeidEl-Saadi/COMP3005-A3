@@ -2,6 +2,7 @@ import psycopg
 
 conn = None
 
+#list records
 def getAllStudents():
     cur = conn.cursor()
     cur.execute("SELECT * FROM students")
@@ -9,6 +10,15 @@ def getAllStudents():
 
     for row in rows:
         print(row)
+    cur.close()
+
+#add record
+def addStudent(first_name, last_name, email, enrollment_date):
+    cur = conn.cursor()
+    cur.execute("INSERT INTO students (first_name, last_name, email, enrollment_date) VALUES (%s, %s, %s, %s)", (first_name, last_name, email, enrollment_date))
+    conn.commit()
+    cur.close()
+    print("record added")
 
 
 def main():
@@ -26,9 +36,11 @@ def main():
         exit(1)
     print("Database connected")
 
-
+    #ARE BELOW FOR FUNCTION TESTING
     getAllStudents()
+    addStudent("Saeid", "El-Saadi", "t2", "2021-03-01")
+    getAllStudents()
+    #FUNCTION TESTING ENDS HERE
 
-    print("Database connected")
     conn.close()
 main()
