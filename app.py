@@ -1,3 +1,5 @@
+#Name: Saeid El-Saadi
+#ID: 101231225
 import psycopg
 
 conn = None
