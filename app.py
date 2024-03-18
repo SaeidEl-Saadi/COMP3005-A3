@@ -55,7 +55,18 @@ def main():
 
     #ARE BELOW FOR FUNCTION TESTING
     getAllStudents()
-    getAllStudents()
+
+    #getAllStudents()
+    #addStudent("Saeid", "El-Saadi", "saeidelsaadi@cmail.carleton.ca", "2024-03-18")
+    #getAllStudents()
+
+    #getAllStudents()
+    #updateStudentEmail(13, "test1@gmail.com")
+    #getAllStudents()
+
+    #getAllStudents()
+    #deleteStudent(13)
+    #getAllStudents()
     #FUNCTION TESTING ENDS HERE
 
     conn.close()
