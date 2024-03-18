@@ -31,6 +31,7 @@ def updateStudentEmail(student_id, new_email):
     cur.close()
     print("record updated")
 
+#delete record
 def deleteStudent(student_id):
     cur = conn.cursor()
     cur.execute("DELETE FROM students WHERE student_id = %s", (student_id,))
@@ -55,7 +56,18 @@ def main():
 
     #ARE BELOW FOR FUNCTION TESTING
     getAllStudents()
-    getAllStudents()
+
+    #getAllStudents()
+    #addStudent("Saeid", "El-Saadi", "saeidelsaadi@cmail.carleton.ca", "2024-03-18")
+    #getAllStudents()
+
+    #getAllStudents()
+    #updateStudentEmail(13, "test1@gmail.com")
+    #getAllStudents()
+
+    #getAllStudents()
+    #deleteStudent(13)
+    #getAllStudents()
     #FUNCTION TESTING ENDS HERE
 
     conn.close()
