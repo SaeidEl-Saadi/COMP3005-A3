@@ -10,6 +10,7 @@ def getAllStudents():
 
     for row in rows:
         print(row)
+    print("\n")
     cur.close()
 
 #add record
@@ -28,6 +29,13 @@ def updateStudentEmail(student_id, new_email):
     cur.close()
     print("record updated")
 
+def deleteStudent(student_id):
+    cur = conn.cursor()
+    cur.execute("DELETE FROM students WHERE student_id = %s", (student_id,))
+    conn.commit()
+    cur.close()
+    print("record deleted")
+
 def main():
     global conn
     try:    #connect to the database
@@ -45,7 +53,6 @@ def main():
 
     #ARE BELOW FOR FUNCTION TESTING
     getAllStudents()
-    addStudent("Saeid", "El-Saadi", "t2", "2021-03-01")
     getAllStudents()
     #FUNCTION TESTING ENDS HERE
 
