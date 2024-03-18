@@ -10,19 +10,3 @@ INSERT INTO students (first_name, last_name, email, enrollment_date) VALUES
 ('John', 'Doe', 'john.doe@example.com', '2023-09-01'),
 ('Jane', 'Smith', 'jane.smith@example.com', '2023-09-01'),
 ('Jim', 'Beam', 'jim.beam@example.com', '2023-09-02');
-
-CREATE OR REPLACE FUNCTION getAllStudents()
-RETURNS TABLE (
-	student_id INT,
-	first_name TEXT,
-	last_name TEXT,
-	email TEXT,
-	enrollment_date DATE
-)
-LANGUAGE plpgsql
-AS
-$$
-BEGIN
-	RETURN QUERY SELECT * FROM students;
-END;
-$$;
