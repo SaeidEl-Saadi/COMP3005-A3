@@ -20,6 +20,13 @@ def addStudent(first_name, last_name, email, enrollment_date):
     cur.close()
     print("record added")
 
+#update record
+def updateStudentEmail(student_id, new_email):
+    cur = conn.cursor()
+    cur.execute("UPDATE students SET email = %s WHERE student_id = %s", (new_email, student_id))
+    conn.commit()
+    cur.close()
+    print("record updated")
 
 def main():
     global conn
