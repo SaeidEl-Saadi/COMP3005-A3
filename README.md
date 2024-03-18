@@ -23,4 +23,4 @@ just write "python3 app.py" in the working directory
 
 ## Video link
 
-link: 
+link: [video](https://www.youtube.com/watch?v=Gy6hippPWlQ)
